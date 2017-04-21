@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using AutoMapper;
+﻿using AutoMapper;
 using DbEntity;
 using RegistrationExample.Models;
 
-
-namespace RegistrationExample.App_Start
+namespace RegistrationExample
 {
     public class AutoMapperConfig
     {
         public static void Configure()
         {
-            Mapper.Initialize(cfg =>
-            {
+            Mapper.Initialize(cfg => {
                 cfg.AddProfile<UserProfile>();
             });
         }
@@ -25,10 +18,10 @@ namespace RegistrationExample.App_Start
     {
         public UserProfile()
         {
-            CreateMap<User, UserViewModel>()
-                .ForMember(dest => dest.Role, source => source.MapFrom(x => x.Role.Name));
-
-            CreateMap<User, UserViewModel>()
-                .ForMember(dest => dest.RoleId, source => source.MapFrom(x => x.Role.Id));
-        } 
+            CreateMap<User, UserViewModel>().ForMember(dest => dest.RoleName, 
+                source => source.MapFrom(user => user.Role.Name));
+            CreateMap<User, UserViewModel>().ForMember(dest => dest.RoleId, 
+                source => source.MapFrom(user => user.Role.Id));
+        }
     }
+}
