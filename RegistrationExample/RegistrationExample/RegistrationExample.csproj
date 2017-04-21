@@ -123,6 +123,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
@@ -148,6 +149,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DbEntity\DbEntity.csproj">
+      <Project>{0B2BA9F9-34C7-4459-AE02-6299AF42E2E4}</Project>
+      <Name>DbEntity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

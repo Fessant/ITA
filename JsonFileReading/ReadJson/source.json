@@ -1,0 +1,14 @@
+{ 
+"type": "object", 
+"properties": { 
+"Errors": { 
+"type": ["array"], 
+"items": { 
+"ref": true 
+} 
+}, 
+"NextTier": { 
+"type": 45 
+} 
+} 
+}
